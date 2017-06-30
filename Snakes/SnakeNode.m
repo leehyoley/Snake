@@ -18,7 +18,7 @@
 
 -(void)setCenter:(CGPoint)center{
     [super setCenter:center];
-       self.backgroundColor = [UIColor colorWithRed:center.x/[UIScreen mainScreen].bounds.size.width green:1-center.x/[UIScreen mainScreen].bounds.size.width blue:center.y/[UIScreen mainScreen].bounds.size.height alpha:1];
+//       self.backgroundColor = [UIColor colorWithRed:center.x/[UIScreen mainScreen].bounds.size.width green:1-center.x/[UIScreen mainScreen].bounds.size.width blue:center.y/[UIScreen mainScreen].bounds.size.height alpha:1];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -33,10 +33,13 @@
     }];
     [self.nodes removeAllObjects];
     self.side = CGPointMake(0, 1);
-    [self eatFoodCount:10];
+    [self eatFoodCount:10 withColor:nil];
 }
 
--(void)eatFoodCount:(int)count{
+-(void)eatFoodCount:(int)count withColor:(UIColor*)color{
+    if (!color) {
+        color = [UIColor greenColor];
+    }
     for (int i=0; i<count; i++) {
         SnakeNode *first = self.nodes.firstObject;
         CGPoint p = first.center;
@@ -44,6 +47,7 @@
             p=CGPointMake(200, 100);
         }
         SnakeNode *n = [[SnakeNode alloc] initWithFrame:CGRectMake(0, 0, self.nodeWidth, self.nodeWidth)];
+        n.backgroundColor = color;
         p.x+=(self.side.x*self.nodeWidth/10);
         p.y+=(self.side.y*self.nodeWidth/10);
         n.center = p;
@@ -55,7 +59,7 @@
     if (!self.isMoving) {
         return;
     }
-    [self eatFoodCount:1];
+    [self eatFoodCount:1 withColor:self.nodes.firstObject.backgroundColor];
     [self.nodes.lastObject removeFromSuperview];
     [self.nodes removeLastObject];
     SnakeNode *first = self.nodes.firstObject;

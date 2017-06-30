@@ -17,7 +17,7 @@
 @property (nonatomic,weak) UIView *backView;
 @property (nonatomic,assign) float nodeWidth;
 -(instancetype)initWithView:(UIView*)backView;
--(void)eatFoodCount:(int)count;
+-(void)eatFoodCount:(int)count withColor:(UIColor*)color;
 -(void)moveForward;
 -(void)reLife;
 @end
